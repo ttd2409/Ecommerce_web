@@ -4,4 +4,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return render(request,'app/home.html') # đưa view trỏ về home.html
+    context ={}
+    return render(request,'app/home.html',context) # đưa view trỏ về home.html
+
+def cart(request):
+    context ={}
+    return render(request,'app/cart.html',context)
+
+def checkout(request):
+    context ={}
+    return render(request,'app/checkout.html',context)
+    
