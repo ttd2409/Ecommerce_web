@@ -15,3 +15,6 @@ def checkout(request):
     context ={}
     return render(request,'app/checkout.html',context)
     
+def user(request):
+    return render(request,'app/checkout.html')
+    
