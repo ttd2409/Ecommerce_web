@@ -17,4 +17,3 @@ def checkout(request):
     
 def user(request):
     return render(request,'app/checkout.html')
-    

@@ -1,7 +1,8 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% block content_checkout %}
-     <div class="row">
+{% block content_checkout %}  <!-- chứa nội dung checkout-->
+
+    <div class="row">
 		<div class="col-lg-6">
 			<div class="box-element" id="form-wrapper">
 				<form id="form">
@@ -28,7 +29,7 @@
 							<input class="form-control" type="text" name="state" placeholder="State..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+							<input class="form-control" type="text" name="mobile" placeholder="Mobile..">
 						</div>
 						<div class="form-field">
 							<input class="form-control" type="text" name="country" placeholder="Zip code..">
@@ -49,7 +50,7 @@
 
 		<div class="col-lg-6">
 			<div class="box-element">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a> <!-- trỏ người dùng request đến cart-->
 				<hr>
 				<h3>Order Summary</h3>
 				<hr>
