@@ -10,12 +10,21 @@ def home(request):
     return render(request,'app/home.html',context) # đưa view trỏ về home.html context nội dung 
 
 def cart(request):
-    context ={}
+    items = []
+    order = None
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order_queryset = Order.objects.filter(customer=customer, complete=False)
+        order = order_queryset.first()
+        items = order.orderitem_set.all() if order else []
+    context = {
+        'items': items,
+        'order': order
+    }
     return render(request,'app/cart.html',context)
 
 def checkout(request):
     context ={}
     return render(request,'app/checkout.html',context)
     
-def user(request):
-    return render(request,'app/checkout.html')
+

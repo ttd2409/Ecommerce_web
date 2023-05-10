@@ -5,6 +5,6 @@ from .models import *  #import toan bo model từ cùng 1 thư mục
 # liệu của Django trong trang quản trị.
 admin.site.register(Customer)
 admin.site.register(Product)
-admin.site.register(Oder)
-admin.site.register(Oder_Item)
+admin.site.register(Order)
+admin.site.register(Orderitem)
 admin.site.register(Shipping_address)
