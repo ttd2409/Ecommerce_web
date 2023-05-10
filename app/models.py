@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-# tạo các bẳng cơ sở dữ liệu
+# tạo các bảng cơ sở dữ liệu
 class Customer(models.Model):
     # name customer
     user = models.OneToOneField(User, on_delete = models.SET_NULL, null= True, blank= False)
@@ -16,10 +16,20 @@ class Product(models.Model):
     # name product
     name = models.CharField(max_length= 255, null= True) 
     price = models.FloatField()
-    digital = models.BooleanField(default=False, null = True, blank = False)
+    digital = models.BooleanField(default=False, null = True, blank = False) # ktra sản phẩm có phải kĩ thuật số không 
+    image = models.ImageField(null= True, blank= True)
     
     def __str__(self):
         return self.name
+    
+    @property # điều chỉnh thuộc tính trong class
+    # lấy url của image
+    def ImageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 class Oder(models.Model):
     customer = models.ForeignKey(Customer, on_delete= models.SET_NULL, blank= True, null= True)

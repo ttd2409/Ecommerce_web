@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,3 +123,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# thư mục tĩnh (static) mà Django cần phải tìm kiếm sẽ được đưa ra là thư mục 
+# static/ trong thư mục gốc của dự án (BASE_DIR)
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR, 'app/static'),
+]
+
+
+#MEDIA_URL là một biến trong Django được sử dụng để xác định URL cho các tệp tin media, 
+# chẳng hạn như hình ảnh, video hay tệp âm thanh
+MEDIA_URL = '/images/'
+
+
+#nhung hinh dua vo se nam trong thu muc app/static va tao thu muc images luu vao
+#chỉ định thư mục đường dẫn đến các tệp đa phương tiện được tải lên bởi người dùng trên server.
+MEDIA_ROOT = os.path.join(BASE_DIR,'app/static/images')

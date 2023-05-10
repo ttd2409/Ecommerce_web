@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import *
 
 
 # Create your views here.
 def home(request):
-    context ={}
-    return render(request,'app/home.html',context) # đưa view trỏ về home.html
+    products = Product.objects.all() # trỏ tới class lấy toàn bộ đối tượng trong Product
+    context = {"products": products}  # chứa những sản phẩm
+    return render(request,'app/home.html',context) # đưa view trỏ về home.html context nội dung 
 
 def cart(request):
     context ={}
