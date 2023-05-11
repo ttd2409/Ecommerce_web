@@ -61,7 +61,10 @@
             <h6> <strong> {{product.name}} </strong></h6>
             <hr>
             <div class="d-flex align-items-center justify-content-between">
-              <button class="btn btn-outline-secondary add-btn">Add to cart</button>
+
+              <!-- mỗi sản phẩm có 1 id riêng, hành động thêm 'add', truyền update giỏ hàng-->
+              <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Add to cart</button>
               <a class="btn-outline-success" href="#"> View </a>
               <h3 class="text-right">${{product.price|floatformat:2}}</h3>
             </div>     

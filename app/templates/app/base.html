@@ -16,7 +16,12 @@
         
         <script src="{% static 'app/js/all.min.js'%}" ></script>
         <script src="{% static 'app/js/myscript.js'%}"></script>
-        <script src="{% static 'app/js/owl.carousel.min.jss'%}" ></script>
+        <script src="{% static 'app/js/owl.carousel.min.js'%}" ></script>
+
+        <!-- user để request user để xem tài khoản nào đang đăng nhập-->
+        <script type= "text/javascript">   
+            var user = '{{ request.user}}'
+        </script>
 
         <title> webbanhang online </title> <!-- Tên tiêu đề -->
         <meta name="description" content="">
@@ -114,7 +119,7 @@
 
 
 
-
-
+        <!-- sau khi load hết sản phẩm trước rồi mới load js nếu không sẽ ko hoạt động nên để cuối trang web hoặc cuối body-->
+        <script src="{% static 'app/js/cart.js'%}" ></script>
     </body>
 </html>

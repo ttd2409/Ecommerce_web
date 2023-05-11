@@ -38,7 +38,7 @@ def checkout(request):
 # lọc những đơn hàng mà khách hàng đang đăng nhập vừa tạo, và xác định rằng đơn hàng chưa hoàn thành.
 
     if request.user.is_authenticated: # kra người dùng đã đăng nhập hay chưa
-        customer = request.user.customer.Order
+        customer = request.user.customer
         order_queryset = Order.objects.filter(customer=customer, complete=False)
         order = order_queryset.first() # truy vấn 
         items = order.orderitem_set.all() if order else [] # lấy tất cả sản phẩm liên quan đến đơn hàng 
